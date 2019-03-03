@@ -23,7 +23,7 @@ LambertVertexToFlagment vertexLambert (LambertAppToVertex v)
 
 fixed4 fragmentLambert (LambertVertexToFlagment i) : SV_Target
 {
-	float3 lightPos = _WorldSpaceLightPos0;
-	float result = dot( lightPos, i.normal );
+	float3 L = _WorldSpaceLightPos0;
+	float result = dot( L, i.normal );
 	return float4( result, result, result, 1);
 }

@@ -2,7 +2,6 @@
 {
 	Properties
 	{
-		_Color ("Color", Color) = (1,1,1,1)
 	}
 	SubShader
 	{
@@ -11,17 +10,17 @@
 		LOD 200
 		Pass
 		{
+            Tags { "LightMode" = "ForwardBase" } //For the first light
 			CGPROGRAM
-
-			// Use shader model 3.0 target, to get nicer looking lighting
-			#pragma target 3.0
-			#pragma vertex vertexLambert
-			#pragma fragment fragmentLambert
 
 			#include "UnityCG.cginc"
 			#include "Lighting.cginc"
 			#include "Core.cginc"
 
+			// Use shader model 3.0 target, to get nicer looking lighting
+			#pragma target 3.0
+			#pragma vertex vertexLambert
+			#pragma fragment fragmentLambert
 
 			ENDCG	
 		}
